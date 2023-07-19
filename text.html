@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Texting</title>
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+          <li><a href="#">Home</a></li>
+          <li class="dropdown">
+            <a href="#">Services</a>
+            <ul class="dropdown-menu">
+              <li class="li-hoverDrop"><a href="#">Service 1</a></li>
+              <li class="li-hoverDrop"><a href="#">Service 2</a></li>
+              <li class="li-hoverDrop"><a href="#">Service 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+  <style>
+  .menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  position: relative;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width:200px;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+} 
+.li-hoverDrop{
+    width:100%;
+}
+.li-hoverDrop:hover{
+    background-color: orange;
+    width: 100%;
+}
+  </style> 
+  
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Close dropdown when clicking outside
+  $(document).click(function(event) {
+    if (!$(event.target).closest('.dropdown').length) {
+      $('.dropdown-menu').hide();
+    }
+  });
+
+  // Toggle dropdown on click
+  $('.dropdown > a').click(function(e) {
+    e.preventDefault();
+    $(this).siblings('.dropdown-menu').toggle();
+  });
+});
+</script>
+
+</body>
+</html>
