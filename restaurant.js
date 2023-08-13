@@ -96,8 +96,12 @@ menu_close.addEventListener('click',()=>{
       spaceBetween: 30,
       centeredSlides: true,
       autoplay: {
+          
         delay: 6500,
         disableOnInteraction: false
+      },
+      loop:{
+        loop:true
       },
       pagination: {
         el: ".swiper-pagination",
